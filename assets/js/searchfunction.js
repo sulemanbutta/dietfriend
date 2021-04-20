@@ -14,7 +14,7 @@
         };
         if(price == '0'){
             if(distance == '0'){
-                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode, requestOptions)
+                fetch("https://sulecorsproxy.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode, requestOptions)
                 .then(response => response.json())
                 .then(data => {
                 console.log(data.businesses)
