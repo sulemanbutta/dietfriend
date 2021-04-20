@@ -4,38 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Untitled</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
 </head>
 
-<body style="height: 646px;">
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="index.html">Diet Friend</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navbarNav">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="restaurantSearch.html">Restaurant Search</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="productSearch.html">Product Search</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="suggestions.html">Suggestions</a></li>
-                </ul>
-            </div><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" style="height: 80px;width: 90px;color: rgb(14,160,255);background-color: rgb(255,255,255);" href="userProfile.html">User Profile</a></div>
-    </nav>
-    <main class="page lanidng-page">
-        <section class="portfolio-block call-to-action border-bottom">
-            <div class="container">
-                <div class="d-flex justify-content-center content"><a class="btn btn-primary btn-lg d-flex justify-content-center align-items-center" role="button" href="suggestions.html" style="padding: 10px;margin: 10px;width: 300px;height: 75px;">See Suggestions</a></div>
-                <div class="d-flex justify-content-center content"><a class="btn btn-primary btn-lg d-flex justify-content-center align-items-center" role="button" href="restaurantSearch.html" style="padding: 10px;margin: 10px;width: 300px;height: 75px;">Search Restaurants</a></div>
-                <div class="d-flex justify-content-center content"><a class="btn btn-primary btn-lg d-flex justify-content-center align-items-center" role="button" href="productSearch.html" style="padding: 10px;margin: 10px;width: 300px;height: 75px;">Search Products</a></div>
-            </div>
-        </section>
-    </main>
+<body>
+    <h1 class="text-center" style="color: rgb(14,160,255);">Diet Friend</h1>
+    <div class="container text-center"><h1>Login</h1>
+    <input type="text" id="userInput" placeholder="Username">
+    <input type="text" id="passInput" placeholder="Password">
+    <button type="button" id="buttonInput" onclick="Login();">Login</button>
+    <p id="response"><br></p></div>
+    <div class="container text-center"><h1>Create Account</h1>
+    <input type="text" id="emailInput" placeholder="E-mail">
+    <input type="text" id="userInput2" placeholder="Username">
+    <input type="text" id="passInput2" placeholder="Password">
+    <button type="button" id="buttonInput" onclick="Create();">Create Account</button>
+    <p id="response2"><br></p></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="assets/js/login_createFunction.js"></script>
     <script src="assets/js/searchfunction.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>

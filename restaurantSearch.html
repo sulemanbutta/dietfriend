@@ -12,15 +12,15 @@
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><a class="navbar-brand logo" href="index.html">Diet Friend</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navbarNav">
+        <div class="container"><a class="navbar-brand logo" href="landingPage.html">Diet Friend</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="restaurantSearch.html">Restaurant Search</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="productSearch.html">Product Search</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="suggestions.html">Suggestions</a></li>
                 </ul>
-            </div><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" style="height: 80px;width: 90px;color: rgb(14,160,255);background-color: rgb(255,255,255);" href="userProfile.html">User Profile</a></div>
+        </div><a class="btn btn-primary d-flex justify-content-center align-items-center" role="button" style="height: 80px;width: 90px;color: rgb(14,160,255);background-color: rgb(255,255,255);" href="userProfile.html">User Profile</a></div>
     </nav>
     <main class="page projects-page">
         <div class="container">
@@ -30,15 +30,30 @@
                 </div>
             </section>
         </div>
-    </main><div class="container">
-    <input class="d-md-flex align-items-center align-content-center" type="text" id="txtInput" placeholder="search term" />
-    <button class="btn btn-primary" type="button" id="buttonInput" onclick="result();">Search</button>
+    </main><div class="container text-center">
+<input type="text" id="searchInput" placeholder="Search Term">
+<input type="text" id="zipInput" placeholder="Zip Code">
+<select id="priceSelect">
+    <option value="0">Price Filter</option>
+    <option value="1">$</option>
+    <option value="2">$$</option>
+    <option value="3">$$$</option>
+    <option value="4">$$$$</option>
+</select>
+<select id="searchRadius">
+    <option value="0">Search Radius Filter</option>
+    <option value="8046">5 miles</option>
+    <option value="16093">10 miles</option>
+    <option value="24140">15 miles</option>
+    <option value="33000">20 miles</option>
+</select>
+<button type="button" id="buttonInput" onclick="result();">Search</button>
+<br><ul id=searchResults style="list-style: none;""></ul>
 </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="assets/js/login_createFunction.js"></script>
     <script src="assets/js/searchfunction.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>

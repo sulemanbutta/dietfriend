@@ -366,3 +366,103 @@ To https://github.com/sulemanbutta/dietfriend.github.io.git
    56de707..e8366e6  master -> master
 
 
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in assets/bootstrap/css/bootstrap.min.css.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in assets/bootstrap/js/bootstrap.min.js.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in assets/js/jquery.min.js.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in assets/js/theme.js.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in productSearch.html.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in restaurantSearch.html.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in suggestions.html.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:28 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in userProfile.html.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:29 GMT-0500 (Central Daylight Time)
+
+warning: LF will be replaced by CRLF in assets/js/searchfunction.js.
+The file will have its original line endings in your working directory
+
+
+----------
+
+Sun Apr 18 2021 23:18:32 GMT-0500 (Central Daylight Time)
+
+To https://github.com/sulemanbutta/dietfriend.github.io.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/sulemanbutta/dietfriend.github.io.git'
+
+
+----------
+
+Sun Apr 18 2021 23:18:32 GMT-0500 (Central Daylight Time)
+
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+

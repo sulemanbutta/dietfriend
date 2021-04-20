@@ -1,44 +1,79 @@
-function result() {
-        var searchTerm = document.getElementById("txtInput").value;
+    function result() {
+        var searchTerm = document.getElementById("searchInput").value;
+        var zipCode = document.getElementById("zipInput").value;
+        var price = document.getElementById("priceSelect").value;
+        var distance = document.getElementById("searchRadius").value;
 
-        var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=75080";
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", "Bearer BZm-Byn8OfpJS0zEjkCgbNTVhNWU73UU2bTSKdLnpxuMt81_fJUf2NONWbFUL0nsBiWA6XMLH8al3lbEkaaELj24jFKDOomkJLNOYSU76XH1CjP-87o1H1zOdf9xYHYx");
 
-         $.ajax({
-            url: myurl,
-            headers: {
-             'Authorization':'Bearer BZm-Byn8OfpJS0zEjkCgbNTVhNWU73UU2bTSKdLnpxuMt81_fJUf2NONWbFUL0nsBiWA6XMLH8al3lbEkaaELj24jFKDOomkJLNOYSU76XH1CjP-87o1H1zOdf9xYHYx',
-         },
+        var requestOptions = {
             method: 'GET',
-            dataType: 'json',
-            success: function result(data){
-
-                // Grab the results from the API JSON return
-                var totalresults = data.total;
-                // If our results are greater than 0, continue
-                if (totalresults > 0){
-                    // Display a header on the page with the number of results
-                    $('#results').append('<h5>We discovered ' + totalresults + ' results!</h5>');
-                    // Itirate through the JSON array of 'businesses' which was returned by the API
-                    $.each(data.businesses, function(i, item) {
-                        // Store each business's object in a variable
-                        var id = item.id;
-                        var alias = item.alias;
-                        var phone = item.display_phone;
-                        var image = item.image_url;
-                        var name = item.name;
-                        var rating = item.rating;
-                        var reviewcount = item.review_count;
-                        var address = item.location.address1;
-                        var city = item.location.city;
-                        var state = item.location.state;
-                        var zipcode = item.location.zip_code;
-                        // Append our result into our page
-                        $('#results').append('<div id="' + id + '" style="margin-top:50px;margin-bottom:50px;"><img src="' + image + '" style="width:200px;height:150px;"><br> <b>' + name + '</b> <br> ' + address + ' ' + city + ', ' + state + ' ' + zipcode + '<br> ' + phone + '<br>Rating: ' + rating + ' </div>');
-                  });
-                } else {
-                    // If our results are 0; no businesses were returned by the JSON therefor we display on the page no results were found
-                    $('#results').append('<h5>We discovered no results!</h5>');
-                }
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        if(price == '0'){
+            if(distance == '0'){
+                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode, requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data.businesses)
+                for(var i =0; i < data.businesses.length; i++){
+                document.getElementById("searchResults").innerHTML += '<br><br><h4>'+data.businesses[i].name+'</h4>';
+                document.getElementById("searchResults").innerHTML += '<img src="'+data.businesses[i].image_url+'" width="128" height="128">'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].phone+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].location.address1+'<br>'+data.businesses[i].location.city+', '+data.businesses[i].location.state+' '+data.businesses[i].location.zip_code+'</li>'  
+                document.getElementById("searchResults").innerHTML += '<li>Price: '+data.businesses[i].price+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>Rating: '+data.businesses[i].rating+'/5</li>'
+                }})
+                .catch(error => console.log('error', error));       
             }
-         });      
+            else{
+                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&radius=" + distance, requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data.businesses)
+                for(var i =0; i < data.businesses.length; i++){
+                document.getElementById("searchResults").innerHTML += '<br><br><h4>'+data.businesses[i].name+'</h4>';
+                document.getElementById("searchResults").innerHTML += '<img src="'+data.businesses[i].image_url+'" width="128" height="128">'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].phone+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].location.address1+'<br>'+data.businesses[i].location.city+', '+data.businesses[i].location.state+' '+data.businesses[i].location.zip_code+'</li>'  
+                document.getElementById("searchResults").innerHTML += '<li>Price: '+data.businesses[i].price+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>Rating: '+data.businesses[i].rating+'/5</li>'
+                }})
+                .catch(error => console.log('error', error)); 
+            }
         }
+        else{
+            if(distance == '0'){
+                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price, requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data.businesses)
+                for(var i =0; i < data.businesses.length; i++){
+                document.getElementById("searchResults").innerHTML += '<br><br><h4>'+data.businesses[i].name+'</h4>';
+                document.getElementById("searchResults").innerHTML += '<img src="'+data.businesses[i].image_url+'" width="128" height="128">'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].phone+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].location.address1+'<br>'+data.businesses[i].location.city+', '+data.businesses[i].location.state+' '+data.businesses[i].location.zip_code+'</li>'  
+                document.getElementById("searchResults").innerHTML += '<li>Price: '+data.businesses[i].price+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>Rating: '+data.businesses[i].rating+'/5</li>'
+                }})
+                .catch(error => console.log('error', error));
+            }
+            else{
+                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price + "&radius=" + distance, requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                console.log(data.businesses)
+                for(var i =0; i < data.businesses.length; i++){
+                document.getElementById("searchResults").innerHTML += '<br><br><h4>'+data.businesses[i].name+'</h4>';
+                document.getElementById("searchResults").innerHTML += '<img src="'+data.businesses[i].image_url+'" width="128" height="128">'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].phone+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>'+data.businesses[i].location.address1+'<br>'+data.businesses[i].location.city+', '+data.businesses[i].location.state+' '+data.businesses[i].location.zip_code+'</li>'  
+                document.getElementById("searchResults").innerHTML += '<li>Price: '+data.businesses[i].price+'</li>'
+                document.getElementById("searchResults").innerHTML += '<li>Rating: '+data.businesses[i].rating+'/5</li>'
+                }})
+                .catch(error => console.log('error', error));               
+            } 
+        }
+    }
