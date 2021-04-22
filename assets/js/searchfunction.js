@@ -29,7 +29,7 @@
                 .catch(error => console.log('error', error));       
             }
             else{
-                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&radius=" + distance, requestOptions)
+                fetch("https://sulecorsproxy.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&radius=" + distance, requestOptions)
                 .then(response => response.json())
                 .then(data => {
                 console.log(data.businesses)
@@ -46,7 +46,7 @@
         }
         else{
             if(distance == '0'){
-                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price, requestOptions)
+                fetch("https://sulecorsproxy.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price, requestOptions)
                 .then(response => response.json())
                 .then(data => {
                 console.log(data.businesses)
@@ -61,7 +61,7 @@
                 .catch(error => console.log('error', error));
             }
             else{
-                fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price + "&radius=" + distance, requestOptions)
+                fetch("https://sulecorsproxy.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&location=" + zipCode + "&price=" + price + "&radius=" + distance, requestOptions)
                 .then(response => response.json())
                 .then(data => {
                 console.log(data.businesses)

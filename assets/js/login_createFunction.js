@@ -9,7 +9,7 @@ function Login() {
 
             }
             else{
-                document.getElementById("respone").innerHTML += "Login Failure. Please Refresh and fill out all login forms."
+                document.getElementById("response").innerHTML += "Login Failure. Please Refresh and fill out all login forms."
             }
         }
         function Create() {
@@ -23,6 +23,6 @@ function Login() {
                 }, 5000);
             }
             else{
-                document.getElementById("respone2").innerHTML += "Creation Failure. Please Refresh and fill out all create account forms."
+                document.getElementById("response2").innerHTML += "Creation Failure. Please Refresh and fill out all create account forms."
             }
         }
